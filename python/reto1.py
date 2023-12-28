@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 # '''
 #  * Escribe un programa que reciba un texto y transforme lenguaje natural a
 #  * "lenguaje hacker" (conocido realmente como "leet" o "1337"). Este lenguaje
@@ -10,7 +7,6 @@
 #  *   (Usa la primera opción de cada transformación. Por ejemplo "4" para la "a")
 # '''
 
-# In[21]:
 
 
 # Creación de un diccionario
@@ -73,9 +69,6 @@ leet = {
 
 
 
-# In[22]:
-
-
 def transformacion_LH(palabra):
     temp=""
     for i in range (0,len(palabra)):
@@ -83,8 +76,6 @@ def transformacion_LH(palabra):
         temp=temp+leet[str(palabra[i])]
     return (temp)
 
-
-# In[23]:
 
 
 palabra = "prueba"
