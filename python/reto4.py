@@ -6,7 +6,7 @@
 '''
 ##Importaciones
 import math
-
+import sys
 ## Funcion creada para determinar si es primo un numero, de serlo se retornara un True de lo contrario False
 def primo(numero):
     if numero == 2 :
@@ -40,22 +40,30 @@ def cuadrado(prueba):
     return raiz_cuadrada**2 == prueba
 
 ## Funcion main encargada de armar el texto de salida que se mostrara al usuario
-def main (numero):
-    texto = 'El numero '+ str(numero)+': '
-    if primo(numero):
-        texto = texto + 'es primo, '
-    else:
-        texto = texto + 'no es primo, '
-    if fibonacci(numero):
-        texto = texto + 'pertenece a fibonacci, '
-    else:
-        texto = texto + 'no pertenece a fibonacci, '
-    if par(numero):
-        texto = texto + 'es par'
-    else:
-        texto = texto + 'no es par'
-    
-    print(texto)
+def main ():
+    numero = 0
+    while numero !='exit':
+        print(' En caso de uerer salir escriba la palabra la palabra exit')
+        numero = input('Ingerese el numero que dese comprobar: ')
 
-## Llamada a la funcion main, se le debe dar el valor del numero que se comprobara
-main(5)
+        texto = 'El numero '+ str(numero)+': '
+
+        try:
+            if primo(int(numero)):
+                texto = texto + 'es primo, '
+            else:
+                texto = texto + 'no es primo, '
+            if fibonacci(int(numero)):
+                texto = texto + 'pertenece a fibonacci, '
+            else:
+                texto = texto + 'no pertenece a fibonacci, '
+            if par(int(numero)):
+                texto = texto + 'es par'
+            else:
+                texto = texto + 'no es par'
+            print(texto)
+        except Exception as e:
+            print('Ocurrio una excepcion: ',e)
+        
+
+main()
