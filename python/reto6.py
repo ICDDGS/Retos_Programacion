@@ -25,44 +25,43 @@ Caracterisitcas del juego:
 
 Player1=0
 Player2=0
-#Entrada= [("🗿","✂️"), ("✂️","🗿"), ("📄","✂️")]
-Entrada=[('piedra','tijeras'),('tijeras','papel'),('piedra','papel'),('piedra','lagarto'),('lagarto','spock'),
-        ('tijeras','spock'),('tijeras','lagarto'),('lagarto','papel'),('spock','papel'),('piedra','spock')]
+Entrada= [("🗿","✂️"), ("✂️","🗿"), ("📄","✂️")]
+
 def calculo_partidas(lista):
     global Player1
     global Player2
     for pares in lista:
         #Piedra
-        if pares[0] == 'piedra'or pares[0] =='🗿':
-            if pares[1] == 'tijeras'or pares[1] =='lagarto':
+        if pares[0] =='🗿':
+            if pares[1] == '✂️'or pares[1] =='🦎':
                 Player1 += 1
             else:
                 Player2 += 1
         
         #Tijeras
-        if pares[0] == 'tijeras'or pares[0] =='✂️':
-            if pares[1] == 'papel'or pares[1] =='lagarto':
+        if pares[0] =='✂️':
+            if pares[1] == '📄'or pares[1] =='🦎':
                 Player1 += 1
             else:
                 Player2 += 1
         
         #papel
-        if pares[0] == 'papel'or pares[0] =='📄':
-            if pares[1] == 'piedra'or pares[1] =='spock':
+        if pares[0] =='📄':
+            if pares[1] == '🗿'or pares[1] =='🖖':
                 Player1 += 1
             else:
                 Player2 += 1
 
         #lagarto
-        if pares[0] == 'lagarto'or pares[0] =='🦎':
-            if pares[1] == 'spock'or pares[1] =='papel':
+        if pares[0] =='🦎':
+            if pares[1] == '🖖'or pares[1] =='📄':
                 Player1 += 1
             else:
                 Player2 += 1
 
         #spock
-        if pares[0] == 'spock'or pares[0] =='🖖':
-            if pares[1] == 'tijeras'or pares[1] =='piedra':
+        if pares[0] =='🖖':
+            if pares[1] == '✂️'or pares[1] =='🗿':
                 Player1 += 1
             else:
                 Player2 += 1
